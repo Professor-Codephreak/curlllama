@@ -102,8 +102,8 @@ POST /api/chat
 ## 🚀 Quick Start
 
 ```bash
-chmod +x llamacurl.sh
-./llamacurl.sh
+chmod +x curlllama.sh
+./curlllama.sh
 📦 Requirements
 
 Bash ≥ 4
@@ -142,6 +142,7 @@ ufw (local firewall lockdown)
           |  Curl Command Map    |
           +----------------------+
 🔬 Example Manual curl Calls
+```bash
 curl http://localhost:11434/api/version
 curl http://localhost:11434/api/tags
 curl http://localhost:11434/api/ps
@@ -152,6 +153,7 @@ curl http://localhost:11434/api/chat \
           {"role": "user", "content": "ping"}
         ]
       }'
+```
 🛡 Operational Philosophy
 
 No hidden behavior
