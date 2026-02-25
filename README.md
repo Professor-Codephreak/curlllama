@@ -123,7 +123,7 @@ Configuration (environment variables)
 Override defaults without editing the script:
 ```
 Always show details
-
+```txt
 DEFAULT_HOST=10.0.0.155 DEFAULT_PORT=18080 ./llamacurl.sh
 Available knobs:
 
@@ -144,7 +144,7 @@ SCAN_PARALLEL — parallel workers for LAN scan (default 64)
 SCAN_CONNECT_TIMEOUT — connect timeout during discovery (default 1)
 
 SERVICE_NAME — systemd service name (default ollama)
-
+```
 Example workflows
 Verify a known remote server
 Always show details
