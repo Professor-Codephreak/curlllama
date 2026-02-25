@@ -1,6 +1,4 @@
 # curllama
-bash script to interact with a llama from curl
-
 **A professional, batteries-included Bash toolkit** for discovering Ollama servers on your LAN, validating their HTTP API, running a smoke-test chat, and generating a copy-paste **curl command map** for day-to-day ops.
 
 <p align="center">
