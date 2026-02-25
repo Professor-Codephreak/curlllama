@@ -3,7 +3,7 @@
 **Ollama LAN discovery + HTTP verification + curl toolkit** — delivered as a single operator-grade Bash script: `llamacurl.sh`.
 
 <p align="center">
-  ![Architecture Diagram](./curlllama.png)
+  ![Architecture Diagram](curlllama.png)
 </p>
 
 <p align="center">
