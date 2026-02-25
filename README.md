@@ -206,8 +206,9 @@ This almost always indicates the script executed under sh/dash, not bash.
 Fix:
 
 Always show details
-
+```bash
 bash ./llamacurl.sh
+```
 This tool also auto re-execs itself under bash when possible.
 
 Unable to reach /api/version
