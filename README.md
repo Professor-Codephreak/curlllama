@@ -167,7 +167,7 @@ Then select a discovered ip:port target (optional, 3-second timeout).
 
 API endpoints covered
 The printed command map includes these common Ollama endpoints:
-
+```txt
 GET /api/version
 
 GET /api/tags
@@ -191,7 +191,7 @@ POST /api/push
 DELETE /api/delete
 
 POST /api/embed
-
+```
 Troubleshooting
 line 1: from: command not found
 Your script file is not Bash (it likely starts with Python, e.g., from ...), or your editor pasted extra content above the shebang.
