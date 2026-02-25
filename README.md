@@ -87,7 +87,7 @@ default prompt (editable; 3-second timeout)
 4) Print a curl “command map”
 A ready-to-copy set of API calls: tags, ps, generate, chat, pull, show, create, copy, push, delete, embed.
 
-Requirements
+# Requirements
 Required
 bash (the script re-execs itself into bash if needed)
 
@@ -110,6 +110,7 @@ systemctl (systemd)
 ufw + sudo (firewall lockdown)
 
 Defaults
+```txt
 Setting	Default
 Target host	10.0.0.155
 Target port	18080
@@ -120,7 +121,7 @@ LAN scan parallelism	64
 LAN connect timeout	1s
 Configuration (environment variables)
 Override defaults without editing the script:
-
+```
 Always show details
 
 DEFAULT_HOST=10.0.0.155 DEFAULT_PORT=18080 ./llamacurl.sh
