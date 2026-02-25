@@ -97,16 +97,13 @@ chmod +x curlllama.sh
 ```
 📦 Requirements
 
+
 Bash ≥ 4
-
 curl
-
 jq (recommended for structured output)
 
 Optional:
-
 systemctl (local diagnostics)
-
 ufw (local firewall lockdown)
 
 🏗 Architecture
