@@ -58,6 +58,7 @@ This project is explicit about that:
 ```bash
 chmod +x llamacurl.sh
 ./llamacurl.sh
+```
 You’ll be prompted for target host/port (3s timeout each). Press Enter for defaults.
 
 What the script does
@@ -69,12 +70,13 @@ http://<ip>:<port>/api/version
 It reports discovered ip:port and (best-effort) model summary via /api/tags.
 
 2) Verify the target server’s API (required)
+```txt
 GET /api/version
 
 GET /api/tags (model list)
 
 GET /api/ps (running models)
-
+```
 3) Run a smoke test chat (required)
 POST /api/chat with:
 
