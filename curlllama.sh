@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# llamacurl.sh
+# curlllama.sh
 # Ollama LAN discovery + connectivity verifier + curl command map.
 #
 # IMPORTANT (fixes your errors):
@@ -7,8 +7,8 @@
 # - This script is BASH. If invoked with sh, it re-execs itself with bash.
 #
 # What it does:
-# - Optional LAN scan to find Ollama servers (HTTP probe to /api/version)
-# - Verifies a chosen target responds: /api/version, /api/tags, /api/ps
+# - Optional LAN scan to find Ollama servers (HTTP probe to /api/v1)
+# - Verifies a chosen target responds: /api/v1, /api/tags, /api/ps
 # - Runs a test /api/chat using a default prompt (editable with 3-second timer)
 # - Prints a complete curl command map for interacting with the server
 # - Local-only: optional service/port checks + UFW hardening (only if target is local)
@@ -256,7 +256,7 @@ probe_host_port() {
   # prints: ip:port<TAB>version_json
   local ip="$1"
   local port="$2"
-  local url="http://${ip}:${port}/api/version"
+  local url="http://${ip}:${port}/api/v1"
   local out
   out="$(curl_probe "${url}" 2>/dev/null || true)"
   [[ -z "${out}" ]] && return 1
@@ -323,7 +323,7 @@ Base URL:
   ${base}
 
 # Info
-curl -sS --max-time ${CURL_TIMEOUT_SECS} ${base}/api/version
+curl -sS --max-time ${CURL_TIMEOUT_SECS} ${base}/api/v1
 curl -sS --max-time ${CURL_TIMEOUT_SECS} ${base}/api/tags
 curl -sS --max-time ${CURL_TIMEOUT_SECS} ${base}/api/ps
 
@@ -399,7 +399,7 @@ read_yesno_timeout SCAN_CHOICE "Scan LAN for Ollama servers via HTTP probes? (y/
 
 FOUND_LIST=()
 if [[ "${SCAN_CHOICE}" == "y" ]]; then
-  hr "LAN Discovery (HTTP probe to /api/version)"
+  hr "LAN Discovery (HTTP probe to /api/v1)"
 
   have xargs || { warn "xargs not found; skipping LAN discovery."; SCAN_CHOICE="n"; }
 
@@ -538,7 +538,7 @@ if ! ver_json="$(curl_json GET "${API}/version" 2>/dev/null)"; then
   err "If the remote host restricts to localhost, run on that host or use an SSH tunnel."
   exit 1
 fi
-info "Ollama server responded to /api/version:"
+info "Ollama server responded to /api/v1:"
 printf '%s\n' "${ver_json}" | pretty
 
 tags_json=""
